@@ -21,7 +21,7 @@ socket                          	= /var/lib/mysql/mysql.sock
 port                            	= 3306
 pid-file                        	= /var/lib/mysql/mysql.pid
 #server_id                       	= <ip_address_no_dots>
-#gtid_domain_id						= <ip_address_no_dots>
+#gtid_domain_id						        = <ip_address_no_dots>
 character_set_server            	= utf8
 collation_server                	= utf8_general_ci
 init_connect                    	= 'SET NAMES utf8'
@@ -89,11 +89,11 @@ long_query_time                 	= 5
 ################################################################
 # MariaDB Audit
 ################################################################
-plugin_load							= "server_audit.so"
-server_audit_logging				= 1
-server_audit_output_type			= file
-server_audit_file_path				= /var/lib/mysql/mariadb-audit.log
-server_audit_events					= query_ddl
+plugin_load							          = "server_audit.so"
+server_audit_logging				      = 1
+server_audit_output_type			    = file
+server_audit_file_path				    = /var/lib/mysql/mariadb-audit.log
+server_audit_events					      = query_ddl
 
 ################################################################
 # InnoDB Variables
@@ -157,13 +157,6 @@ optimizer_switch                	= 'extended_keys=on'
 #slave_parallel_mode             	= optimistic
 #slave_domain_parallel_threads   	= 2
 #slave_parallel_threads          	= 2
-#plugin_load                     	= "semisync_master.so;semisync_slave.so"
-#rpl_semi_sync_master            	= ON
-#rpl_semi_sync_slave             	= ON
-#loose_rpl_semi_sync_master_enabled 	= ON
-#loose_rpl_semi_sync_slave_enabled 	= ON
-#rpl_semi_sync_master_timeout    	= 10
-#ignore_db_dirs                  	= .rocksdb
 
 ################################################################
 # Galera Settings
