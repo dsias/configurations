@@ -89,11 +89,11 @@ long_query_time                 	= 5
 ################################################################
 # MariaDB Audit
 ################################################################
-plugin_load							          = "server_audit.so"
-server_audit_logging				      = 1
-server_audit_output_type			    = file
-server_audit_file_path				    = /var/lib/mysql/mariadb-audit.log
-server_audit_events					      = query_ddl
+plugin_load							= "server_audit.so"
+server_audit_logging				= 1
+server_audit_output_type			= file
+server_audit_file_path				= /var/lib/mysql/mariadb-audit.log
+server_audit_events					= query_ddl
 
 ################################################################
 # InnoDB Variables
