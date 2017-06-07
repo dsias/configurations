@@ -20,8 +20,8 @@ tmpdir                          	= /tmp
 socket                          	= /var/lib/mysql/mysql.sock
 port                            	= 3306
 pid-file                        	= /var/lib/mysql/mysql.pid
-#server_id                       	= <ip_address_no_dots>
-#gtid_domain_id                   	= <ip_address_no_dots>
+server_id                       	= <ip_address_no_dots>
+gtid_domain_id                  	= <ip_address_no_dots>
 character_set_server            	= utf8
 collation_server                	= utf8_general_ci
 init_connect                    	= 'SET NAMES utf8'
@@ -43,9 +43,9 @@ symbolic_links                  	= 0
 myisam_recover_options          	= FORCE,BACKUP
 max_allowed_packet              	= 512M
 max_connect_errors              	= 1000000
-#ssl_ca                         	=
-#ssl_key                        	=
-#ssl_cert                       	=
+#ssl_ca                          	=
+#ssl_key                         	=
+#ssl_cert                        	=
 
 ################################################################
 # Caches, Buffers & Connections
@@ -65,8 +65,8 @@ interactive_timeout             	= 600
 max_connect_errors              	= 1000000
 join_buffer_size                	= 16M
 key_buffer_size                 	= 16M
-#tmp_table_size                  	= <(RAM_IN_GB/512)*1024>M
-#max_heap_table_size             	= <(RAM_IN_GB/512)*1024>M
+tmp_table_size                  	= <(RAM_IN_GB/512)*1024>M
+max_heap_table_size             	= <(RAM_IN_GB/512)*1024>M
 
 ################################################################
 # MySQL Logs
@@ -101,7 +101,7 @@ innodb_file_per_table           	= 1
 innodb_file_format              	= Barracuda
 innodb_file_format_max          	= Barracuda
 innodb_buffer_pool_instances    	= -1
-#innodb_buffer_pool_size        	= <66_pct_of_ram>M
+#innodb_buffer_pool_size         	= <66_pct_of_ram>M
 innodb_flush_log_at_trx_commit  	= 0
 innodb_flush_method             	= O_DIRECT
 innodb_log_files_in_group       	= 2
