@@ -100,8 +100,7 @@ server_audit_events.            	= query_ddl
 innodb_file_per_table           	= 1
 innodb_file_format              	= Barracuda
 innodb_file_format_max          	= Barracuda
-innodb_buffer_pool_instances    	= -1
-#innodb_buffer_pool_size         	= <66_pct_of_ram>M
+innodb_buffer_pool_size         	= <66_pct_of_ram>M
 innodb_flush_log_at_trx_commit  	= 0
 innodb_flush_method             	= O_DIRECT
 innodb_log_files_in_group       	= 2
@@ -110,7 +109,7 @@ innodb_log_file_size            	= 1G
 innodb_autoinc_lock_mode        	= 2
 innodb_rollback_on_timeout      	= ON
 innodb_stats_on_metadata        	= 0
-#innodb_thread_concurrency      	= <twice_the_number_of_cpus>
+innodb_thread_concurrency       	= <twice_the_number_of_cpus>
 innodb_force_primary_key        	= 1
 
 ################################################################
