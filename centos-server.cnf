@@ -72,13 +72,13 @@ max_heap_table_size             	= <(ram_in_gb/512)*1024>
 ################################################################
 binlog_format                   	= ROW
 binlog_row_image                	= FULL
-log_bin                         	= /var/lib/mysql/mariadb-bin
-log_bin_index                   	= /var/lib/mysql/mariadb-bin.index
+log_bin                         	= /var/log/mysql/mariadb-bin
+log_bin_index                   	= /var/log/mysql/mariadb-bin.index
 expire_logs_days                	= 3
 sync_binlog                     	= 1
-log_error                       	= /var/lib/mysql/mariadb-error.log
+log_error                       	= /var/log/mysql/mariadb-error.log
 slow_query_log                  	= 1
-slow_query_log_file             	= /var/lib/mysql/mariadb-slow.log
+slow_query_log_file             	= /var/log/mysql/mariadb-slow.log
 log_queries_not_using_indexes   	= 0
 log_warnings                    	= 2
 log_slow_verbosity              	= query_plan,innodb
