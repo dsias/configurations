@@ -148,8 +148,8 @@ optimizer_switch                	= 'extended_keys=on'
 # Standard Replication Settings
 ################################################################
 sysdate_is_now                  	= 1
-#relay_log                       	= /var/lib/mysql/mariadb_relay
-#relay_log_index                 	= /var/lib/mysql/mariadb_relay.index
+#relay_log                       	= /var/log/mysql/mariadb_relay
+#relay_log_index                 	= /var/log/mysql/mariadb_relay.index
 #log_slave_updates               	= 1
 #read_only                       	= ON
 report_host                     	= <hostname>
