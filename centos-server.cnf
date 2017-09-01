@@ -27,7 +27,6 @@ collation_server                	= utf8_general_ci
 init_connect                    	= 'SET NAMES utf8'
 user                            	= mysql
 default_storage_engine          	= InnoDB
-enforce_storage_engine          	= InnoDB
 userstat                        	= ON
 explicit_defaults_for_timestamp 	= 1
 feedback                        	= ON
@@ -65,8 +64,8 @@ interactive_timeout             	= 600
 max_connect_errors              	= 1000000
 join_buffer_size                	= 16M
 key_buffer_size                 	= 16M
-tmp_table_size                  	= <(RAM_IN_GB/512)*1024>M
-max_heap_table_size             	= <(RAM_IN_GB/512)*1024>M
+tmp_table_size                  	= <(ram_in_gb/512)*1024>
+max_heap_table_size             	= <(ram_in_gb/512)*1024>
 
 ################################################################
 # MySQL Logs
@@ -100,8 +99,10 @@ server_audit_events.            	= query_ddl
 innodb_file_per_table           	= 1
 innodb_file_format              	= Barracuda
 innodb_file_format_max          	= Barracuda
-innodb_buffer_pool_size         	= <66_pct_of_ram>M
-innodb_flush_log_at_trx_commit  	= 0
+innodb_buffer_pool_size         	= <66_pct_of_ram>
+innodb_buffer_pool_instances   		= <1_for_every_gb_of_ram>
+innodb_page_cleaners           		= <1_for_every_gb_of_ram>
+innodb_flush_log_at_trx_commit  	= 1
 innodb_flush_method             	= O_DIRECT
 innodb_log_files_in_group       	= 2
 innodb_log_buffer_size          	= 32M
@@ -110,7 +111,7 @@ innodb_autoinc_lock_mode        	= 2
 innodb_rollback_on_timeout      	= ON
 innodb_stats_on_metadata        	= 0
 innodb_thread_concurrency       	= <twice_the_number_of_cpus>
-innodb_force_primary_key        	= 1
+innodb_force_primary_key        	= 0
 
 ################################################################
 # MariaDB Optimizer Switches
@@ -146,13 +147,13 @@ optimizer_switch                	= 'extended_keys=on'
 ################################################################
 # Standard Replication Settings
 ################################################################
-#sysdate_is_now                  	= 1
+sysdate_is_now                  	= 1
 #relay_log                       	= /var/lib/mysql/mariadb_relay
 #relay_log_index                 	= /var/lib/mysql/mariadb_relay.index
 #log_slave_updates               	= 1
 #read_only                       	= ON
-#report_host                     	= <hostname>
-#slave_parallel_mode             	= optimistic
+report_host                     	= <hostname>
+#slave_parallel_mode             	= conservative
 #slave_domain_parallel_threads   	= 2
 #slave_parallel_threads          	= 2
 
