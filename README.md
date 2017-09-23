@@ -1,1 +1,1 @@
-# configurations
+# Sample MariaDB Configurations
